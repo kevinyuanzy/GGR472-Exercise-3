@@ -1,0 +1,7 @@
+.map-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+/*This positions the map container to its closest HTML element, or in this case to the viewport as there are no other elements.*/
