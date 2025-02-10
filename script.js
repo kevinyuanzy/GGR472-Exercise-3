@@ -48,7 +48,7 @@ map.on('load', () => {
    // Add a data source from a GeoJSON file
    map.addSource('buildings-data', {
     type: 'geojson',
-    data: 'https://github.com/kevinyuanzy/GGR472-Exercise-3/blob/main/buildings.geojson' // Your URL to your buildings.geojson file
+    data: 'https://raw.githubusercontent.com/kevinyuanzy/GGR472-Exercise-3/main/buildings.geojson' // Your URL to your buildings.geojson file
 });
 
 map.addLayer({
@@ -60,4 +60,3 @@ map.addLayer({
         'circle-color': '#007cbf'
     }
 });
-
