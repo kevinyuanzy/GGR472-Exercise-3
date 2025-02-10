@@ -3,8 +3,8 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoia2V2aW55dWFuenkiLCJhIjoiY201eHprYXU0MGZwejJsb
 const map = new mapboxgl.Map({
     container: 'exercise4ky', // map container ID
     style: 'mapbox://styles/kevinyuanzy/cm6ieu7cc008d01s92fh53ma2', // style URL
-    center: [..., ...], // starting position [lng, lat]
-    zoom: ..., // starting zoom level
+    center: [-79.441925, 43.676396], // starting position [lng, lat]
+    zoom: 10.85, // starting zoom level
 });
 
 map.on('load', () => {
@@ -44,3 +44,20 @@ map.on('load', () => {
     });
 
 });
+
+   // Add a data source from a GeoJSON file
+   map.addSource('buildings-data', {
+    type: 'geojson',
+    data: 'https://github.com/kevinyuanzy/GGR472-Exercise-3/blob/main/buildings.geojson' // Your URL to your buildings.geojson file
+});
+
+map.addLayer({
+    'id': 'buildings-point',
+    'type': 'circle',
+    'source': 'buildings-data',
+    'paint': {
+        'circle-radius': 5,
+        'circle-color': '#007cbf'
+    }
+});
+
