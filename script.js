@@ -60,3 +60,24 @@ map.addLayer({
         'circle-color': '#007cbf'
     }
 });
+
+ // Add a data source from a Mapbox tileset
+ map.addSource('...', { // Create your own source ID
+    'type': 'vector',
+    'url': 'mapbox://kevinyuanzy.412yr986' // Update to your mapbox tileset ID
+});
+
+map.addLayer({
+    'id': '...', // Create your own layer ID
+    'type': 'fill', // Note this is different to point data
+    'source': '...', // Must match source ID from addSource Method
+    'paint': {
+        'fill-color': '#888888', // Test alternative colours and style properties
+        'fill-opacity': 0.4,
+        'fill-outline-color': 'black'
+    },
+    'source-layer': '...' // Tileset NAME (diff to ID), get this from mapbox tileset page
+},
+    'uoft-buildings' // Drawing order - places layer below points
+    // Here the addlayer method takes 2 arguments (the layer as an object and a string for another layer's name). If the other layer already exists, the new layer will be drawn before that one
+);
